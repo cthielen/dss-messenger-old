@@ -31,3 +31,7 @@ gem 'sqlite3'
 # end
 
 gem "jquery-rails"
+
+gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
+
+gem 'rubycas-client'

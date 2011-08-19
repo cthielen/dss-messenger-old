@@ -2,3 +2,6 @@
 db/*.sqlite3
 log/*.log
 tmp/
+config/api_key.yml
+public/.DS_Store
+

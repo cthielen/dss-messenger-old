@@ -7,11 +7,14 @@ class Person < ActiveResource::Base
   def role_symbols
     # Get this app's API key
     api_key = YAML.load_file("#{Rails.root.to_s}/config/api_key.yml")['keys']['key']
+    # Though we know this, let's keep it configurable in case it changes
+    app_name = YAML.load_file("#{Rails.root.to_s}/config/api_key.yml")['keys']['name']
     
     syms = []
     
     # Query for permissions of user via API key, converting them into declarative_authentication's needed symbols
-    roles.includes("application").where(:applications => {:api_key => api_key}).each do |role|
+    roles = Application.find(app_name, :params => { :person_id => loginid }).roles
+    roles.each do |role|
       syms << role.name.underscore.to_sym
     end
     

@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_filter CASClient::Frameworks::Rails::Filter
 
+  # Returns the full object (RESTful API call)
   def current_user
     Person.find(session[:cas_user])
   end

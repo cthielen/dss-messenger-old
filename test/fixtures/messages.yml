@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  subject: MyString
+  body: MyText
+  delivery_status: MyString
+  sent: 2011-08-23 18:00:16
+  expires: 2011-08-23 18:00:16
+  flash: false
+  url: MyString
+
+two:
+  subject: MyString
+  body: MyText
+  delivery_status: MyString
+  sent: 2011-08-23 18:00:16
+  expires: 2011-08-23 18:00:16
+  flash: false
+  url: MyString

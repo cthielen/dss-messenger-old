@@ -1,2 +1,132 @@
-<h1>Site#index</h1>
-<p>Find me in app/views/site/index.html.erb</p>
+<script type="text/javascript">
+	$(function() {
+		$( "#sortable1, #sortable2" ).sortable({
+			connectWith: ".connectedSortable"
+		}).disableSelection();
+	});
+</script>
+
+<div class="block small left" style="background-color: inherit; border-bottom: none; background: none;">
+	<div class="block">
+		<div class="block_head">
+			<div class="bheadl"></div>
+			<div class="bheadr"></div>
+
+			<h2>Compose New Message</h2>
+		</div>		<!-- .block_head ends -->
+		<div class="block_content">
+		  
+      
+		</div>		<!-- .block_content ends -->
+
+		<div class="bendl"></div>
+		<div class="bendr"></div>
+	</div>		<!-- .block.small.left ends -->
+	
+</div>
+
+<div class="block small right">
+
+	<div class="block_head">
+		<div class="bheadl"></div>
+		<div class="bheadr"></div>
+
+		<h2>Recently Sent Messages</h2>
+	</div>		<!-- .block_head ends -->
+	<div class="block_content">
+    <table cellpadding="0" cellspacing="0" width="100%" class="sortable">
+		
+			<thead>
+				<tr>
+					<th width="10"><input type="checkbox" class="check_all" /></th>
+					<th>Page title</th>
+					<th>Status</th>
+					<th>Date created</th>
+					<th>Author</th>
+					<td>&nbsp;</td>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td><a href="#">Aorem ipsum dolor</a></td>
+					<td>Published</td>
+					<td>20.03.2010</td>
+					<td><a href="#">John Doe</a></td>
+					<td class="delete"><a href="#">Delete</a></td>
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td><a href="#">Zn ac libero nunc, vel congue neque</a></td>
+					<td>Published</td>
+					<td>18.03.2010</td>
+					<td><a href="#">John Doe</a></td>
+					<td class="delete"><a href="#">Delete</a></td>
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td><a href="#">Borem ipsum dolor</a></td>
+					<td>Published</td>
+					<td>20.03.2010</td>
+					<td><a href="#">John Doe</a></td>
+					<td class="delete"><a href="#">Delete</a></td>
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td><a href="#">Aaa In ac libero nunc, vel congue neque</a></td>
+					<td>Published</td>
+					<td>18.03.2010</td>
+					<td><a href="#">John Doe</a></td>
+					<td class="delete"><a href="#">Delete</a></td>
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td><a href="#">Lorem ipsum dolor</a></td>
+					<td>Published</td>
+					<td>20.03.2010</td>
+					<td><a href="#">John Doe</a></td>
+					<td class="delete"><a href="#">Delete</a></td>
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td><a href="#">In ac libero nunc, vel congue neque</a></td>
+					<td>Published</td>
+					<td>18.03.2010</td>
+					<td><a href="#">John Doe</a></td>
+					<td class="delete"><a href="#">Delete</a></td>
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td><a href="#">Lorem ipsum dolor</a></td>
+					<td>Published</td>
+					<td>20.03.2010</td>
+					<td><a href="#">John Doe</a></td>
+					<td class="delete"><a href="#">Delete</a></td>
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td><a href="#">In ac libero nunc, vel congue neque</a></td>
+					<td>Published</td>
+					<td>08.03.2010</td>
+					<td><a href="#">John Doe</a></td>
+					<td class="delete"><a href="#">Delete</a></td>
+				</tr>
+			</tbody>
+			
+		</table>
+		
+	</div>		<!-- .block_content ends -->
+
+	<div class="bendl"></div>
+	<div class="bendr"></div>
+
+</div>		<!-- .block.small.right ends -->
+	

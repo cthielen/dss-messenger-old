@@ -1,3 +1,3 @@
 class Message < ActiveRecord::Base
-  has_one :sender, :as => :sendable
+  has_one :sender
 end

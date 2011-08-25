@@ -9,6 +9,16 @@
 		<div class="block_content">
 		  
 		  <form action="" method="post">
+		    <p>
+					<label>From:</label><br />
+					<input type="text" class="text small" disabled value="<%= current_user.first %> <%= current_user.last %>" />
+				</p>
+
+    		<p>
+					<label>To:</label><br />
+					<input type="text" class="text small" id="to_tokens" data-pre="" />
+    		</p>
+				
 				<p>
 					<label>Subject:</label><br />
 					<input type="text" class="text small" /> 

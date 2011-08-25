@@ -12,48 +12,6 @@ $(function () {
 			
 			
 	
-	// Web stats
-	$('table.stats').each(function() {
-		
-		if($(this).attr('rel')) {
-			var statsType = $(this).attr('rel');
-		} else {
-			var statsType = 'area';
-		}
-		
-		var chart_width = ($(this).parent('.block_content').width()) - 60;
-		
-		
-		if(statsType == 'line' || statsType == 'pie') {		
-			$(this).hide().visualize({
-				type: statsType,	// 'bar', 'area', 'pie', 'line'
-				width: chart_width,
-				height: '240px',
-				colors: ['#6fb9e8', '#ec8526', '#9dc453', '#ddd74c'],
-				
-				lineDots: 'double',
-				interaction: true,
-				multiHover: 5,
-				tooltip: true,
-				tooltiphtml: function(data) {
-					var html ='';
-					for(var i=0; i<data.point.length; i++){
-						html += '<p class="chart_tooltip"><strong>'+data.point[i].value+'</strong> '+data.point[i].yLabels[0]+'</p>';
-					}	
-					return html;
-				}
-			});
-		} else {
-			$(this).hide().visualize({
-				type: statsType,	// 'bar', 'area', 'pie', 'line'
-				width: chart_width,
-				height: '240px',
-				colors: ['#6fb9e8', '#ec8526', '#9dc453', '#ddd74c']
-			});
-		}
-	});
-	
-	
 	
 	// Sort table
 	$("table.sortable").tablesorter({
@@ -120,34 +78,6 @@ $(function () {
 	});
 	
 	
-	
-	// Sidebar Tabs
-	$(".sidebar_content").hide();
-	
-	if(window.location.hash && window.location.hash.match('sb')) {
-	
-		$("ul.sidemenu li a[href="+window.location.hash+"]").parent().addClass("active").show();
-		$(".block .sidebar_content#"+window.location.hash).show();
-	} else {
-	
-		$("ul.sidemenu li:first-child").addClass("active").show();
-		$(".block .sidebar_content:first").show();
-	}
-
-	$("ul.sidemenu li").click(function() {
-	
-		var activeTab = $(this).find("a").attr("href");
-		window.location.hash = activeTab;
-	
-		$(this).parent().find('li').removeClass("active");
-		$(this).addClass("active");
-		$(this).parents('.block').find(".sidebar_content").hide();			
-		$(activeTab).show();
-		return false;
-	});	
-	
-	
-	
 	// Block search
 	$('.block .block_head form .text').bind('click', function() { $(this).attr('value', ''); });
 	
@@ -181,26 +111,6 @@ $(function () {
 	});
 	
 	
-	
-	// File upload
-	if ($('#fileupload').length) {
-		new AjaxUpload('fileupload', {
-			action: 'upload-handler.php',
-			autoSubmit: true,
-			name: 'userfile',
-			responseType: 'text/html',
-			onSubmit : function(file , ext) {
-					$('.fileupload #uploadmsg').addClass('loading').text('Uploading...');
-					this.disable();	
-				},
-			onComplete : function(file, response) {
-					$('.fileupload #uploadmsg').removeClass('loading').text(response);
-					this.enable();
-				}	
-		});
-	}
-		
-		
 	
 	// Date picker
 	$('input.date_picker').date_input();

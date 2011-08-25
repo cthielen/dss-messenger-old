@@ -73,7 +73,7 @@ $(function () {
 	
 	
 	// Set WYSIWYG editor
-	$('.wysiwyg').wysiwyg({css: "css/wysiwyg.css"});
+	$('.wysiwyg').wysiwyg({css: "stylesheets/wysiwyg.css"});
 	
 	
 	

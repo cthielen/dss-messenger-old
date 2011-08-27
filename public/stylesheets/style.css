@@ -508,24 +508,24 @@ a:hover {
 	border: 1px solid #d77011;
 	}
 
-.block .block_content ul {
+.block .block_content ul.themed {
 	padding-left: 15px;
 	padding-bottom: 15px;
 	}
 	
-.block .block_content ol {
+.block .block_content ol.themed {
 	padding-left: 15px;
 	padding-bottom: 15px;
 	list-style-position: inside;
 	}
 
-.block .block_content ul li {
+.block .block_content ul.themed li {
 	margin-bottom: 5px;
 	padding-left: 15px;
 	background: url(../images/li.gif) 0 7px no-repeat;
  	}
  	
-.block .block_content ol li {
+.block .block_content ol.themed li {
 	margin-bottom: 5px;
 	}
 	

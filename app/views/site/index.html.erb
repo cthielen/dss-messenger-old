@@ -7,8 +7,7 @@
 			<h2>Compose New Message</h2>
 		</div>		<!-- .block_head ends -->
 		<div class="block_content">
-		  
-		  <form action="" method="post">
+		  <%= form_for(@message) do |f| %>
 				<p>
 				  <label>Template:</label> <br />
 					<select class="styled">
@@ -60,9 +59,7 @@
 				<p align="center">
 				  <input type="submit" class="submit long" value="Send Message" />
 				</p>
-			</form>
-		  
-      
+			<% end %>
 		</div>		<!-- .block_content ends -->
 
 		<div class="bendl"></div>

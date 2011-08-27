@@ -3,4 +3,6 @@ DssMessenger::Application.routes.draw do
   get "site/logout"
 
   root :to => "site#index"
+  
+  resources :messages
 end

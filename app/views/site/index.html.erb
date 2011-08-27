@@ -9,6 +9,16 @@
 		<div class="block_content">
 		  
 		  <form action="" method="post">
+				<p>
+				  <label>Template:</label> <br />
+					<select class="styled">
+						<option>None</option>
+						<option>Maintenance Scheduled</option>
+						<option>Service Update</option>
+						<option>Emergency/Unexpected Outage</option>
+					</select>
+				</p>
+
 		    <p>
 					<label>From:</label><br />
 					<input type="text" class="text small" disabled value="<%= current_user.first %> <%= current_user.last %>" />
@@ -39,8 +49,8 @@
 				</p>
 				
 				
-				<p><label>Message Type:</label> <br />
-				
+				<p>
+				  <label>Message Type:</label> <br />
 					<select class="styled">
 						<option>E-Mail and Inbox</option>
 						<option>Flash Announcement</option>
@@ -75,10 +85,10 @@
 			<thead>
 				<tr>
 					<th width="10"><input type="checkbox" class="check_all" /></th>
-					<th>Page title</th>
+					<th>Subject</th>
 					<th>Status</th>
-					<th>Date created</th>
-					<th>Author</th>
+					<th>Date sent</th>
+					<th>From</th>
 					<td>&nbsp;</td>
 				</tr>
 			</thead>

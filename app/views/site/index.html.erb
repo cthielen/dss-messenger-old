@@ -40,22 +40,15 @@
 		      <%= f.text_area :body, :class => "wysiwyg" %>
 				</p>
 				
-			  <p>
-					<label>Send date:</label> 
-					<input type="text" class="text date_picker" />
-		    </p>
 		    <p>
-					<label>Expiration date:</label> 
-					<input type="text" class="text date_picker" />
+		      <%= f.label :expires, "Expiration date" %>
+		      <%= f.text_field :expires, :class => "text date_picker" %>
 				</p>
 				
 				
 				<p>
-				  <label>Message Type:</label> <br />
-					<select class="styled">
-						<option>E-Mail and Inbox</option>
-						<option>Flash Announcement</option>
-					</select>
+				  <%= f.label :flash, "Message type" %><br />
+				  <%= f.select :flash, [['E-Mail and Inbox', 1], ['Flash Announcement', 2]], {}, :class => "styled" %>
 				</p>
 				
 				<p align="center">

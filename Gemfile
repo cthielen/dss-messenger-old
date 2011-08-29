@@ -35,3 +35,6 @@ gem "jquery-rails"
 gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
 
 gem 'rubycas-client'
+
+# For JSON parsing of dss-rm/api/search.json
+gem 'httparty'

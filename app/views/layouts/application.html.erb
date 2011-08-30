@@ -45,10 +45,15 @@
 				<ul id="nav">
 					
 					<% if current_controller?( :controller => "site" ) %>
-						<li class="active"><%= link_to "Messaging", :controller => "site", :action => "index" %></li>
+						<li class="active"><%= link_to "Messaging", :controller => "site", :action => "index" %>
 					<% elsif %>
-						<li><%= link_to "Messaging", :controller => "site", :action => "index" %></li>
+						<li><%= link_to "Messaging", :controller => "site", :action => "index" %>
 					<% end %>
+  					<ul>
+  						<li><%= link_to "View All", messages_path %></li>
+  						<li><%= link_to 'Compose New Message', new_message_path %></li>
+  					</ul>
+					</li>
 					<% if permitted_to? :index, :people %>
 						<% if current_controller?( :controller => "people" ) %>
 							<li class="active"><%= link_to "Users", people_path %>

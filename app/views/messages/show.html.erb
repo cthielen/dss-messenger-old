@@ -10,23 +10,11 @@
 		  <div class="message info"><p>You are viewing a past message. You will not be able to edit it.</p></div>
 		  
 		  <%= form_for(@message) do |f| %>
-				<!--<p>
-				  <label>Template:</label> <br />
-					<select class="styled">
-						<option>None</option>
-						<option>Maintenance Scheduled</option>
-						<option>Service Update</option>
-						<option>Emergency/Unexpected Outage</option>
-					</select>
-				</p>-->
-
 		    <p>
-		      <%= f.label :from %><br />
-		      <%= f.text_field :from, :class => "text small", :disabled => 'disabled', :value => current_user.first + ' ' + current_user.last %>
+		      <%= f.label :sender, "From" %><br />
+		      <%= f.text_field :sender, :class => "text small", :disabled => 'disabled', :value => @message.sender.name %>
 				</p>
 				
-				<%= f.hidden_field :loginid, :value => current_user.loginid %>
-
     		<p>
 					<%= f.label :to %><br />
 					<input type="text" name="message[to_tokens]" class="text small" disabled="disabled" />

@@ -19,11 +19,11 @@
 				</p>
 
 		    <p>
-		      <%= f.label :from %><br />
+		      <%= f.label :from, "From" %><br />
 		      <%= f.text_field :from, :class => "text small", :disabled => 'disabled', :value => current_user.first + ' ' + current_user.last %>
 				</p>
 				
-				<%= f.hidden_field :loginid, :value => current_user.loginid %>
+				<%= f.hidden_field :sender_id %>
 
     		<p>
 					<%= f.label :to %><br />

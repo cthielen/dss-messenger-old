@@ -16,6 +16,9 @@ class MessagesController < ApplicationController
   def show
     @message = Message.find_by_id(params[:id])
 
+    # Ensure date format matches what JS produces (for visual consistency)
+    @message.expires = @message.expires.to_date.to_s.strip
+
     respond_to do |format|
       format.html
     end

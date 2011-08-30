@@ -1,7 +1,7 @@
 DssMessenger::Application.routes.draw do
-  get "site/index"
-  get "site/logout"
-  get "site/search"
+  get "index", :controller => "Site"
+  get "logout", :controller => "Site"
+  get "search", :controller => "Site"
 
   root :to => "site#index"
   

@@ -1,5 +1,6 @@
 class Message < ActiveRecord::Base
-  has_one :sender
+  has_many :recipients
+  belongs_to :sender
 
   # Override these for easier form usage
   def loginid=(loginid)

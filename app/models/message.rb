@@ -1,6 +1,7 @@
 class Message < ActiveRecord::Base
   has_many :recipients
   belongs_to :sender
+  belongs_to :message_type
 
   accepts_nested_attributes_for :sender, :recipients
 

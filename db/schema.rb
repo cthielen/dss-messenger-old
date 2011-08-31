@@ -10,7 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110830221141) do
+ActiveRecord::Schema.define(:version => 20110831001942) do
+
+  create_table "message_types", :force => true do |t|
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", :force => true do |t|
     t.string   "subject"
@@ -23,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110830221141) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "sender_id"
+    t.integer  "message_type_id"
   end
 
   create_table "recipients", :force => true do |t|

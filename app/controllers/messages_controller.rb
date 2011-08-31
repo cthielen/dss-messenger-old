@@ -18,7 +18,9 @@ class MessagesController < ApplicationController
 
     # Ensure date format matches what JS produces (for visual consistency)
     @message.expires = @message.expires.to_date.to_s.strip
-
+    
+    @recipients = RmCustom.get("/resolve.json?ids=" + @message.recipient_ids.join(','))
+    
     respond_to do |format|
       format.html
     end

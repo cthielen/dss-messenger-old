@@ -17,7 +17,7 @@
 				
     		<p>
 					<%= f.label :to %><br />
-					<input type="text" name="message[to_tokens]" class="text small" disabled="disabled" />
+					<input type="text" name="message[to_tokens]" class="text small" id="to_tokens" data-pre="<%= @recipients.to_json %>" disabled="disabled" />
     		</p>
 				
 				<p>

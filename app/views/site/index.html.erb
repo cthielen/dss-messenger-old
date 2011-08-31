@@ -47,8 +47,8 @@
 				
 				
 				<p>
-				  <%= f.label :flash, "Message type" %><br />
-				  <%= f.select :flash, [['E-Mail and Inbox', false], ['Flash Announcement', true]], {}, :class => "styled" %>
+				  <%= f.label :message_type_id, "Message type" %><br />
+				  <%= f.select :message_type_id, MessageType.all.collect {|type| [type.name, type.id]}, {}, :class => "styled" %>
 				</p>
 				
 				<p align="center">

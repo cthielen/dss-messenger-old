@@ -9,13 +9,8 @@
 		<div class="block_content">
 		  <%= form_for(@message) do |f| %>
 				<p>
-				  <label>Template:</label> <br />
-					<select class="styled">
-						<option>None</option>
-						<option>Maintenance Scheduled</option>
-						<option>Service Update</option>
-						<option>Emergency/Unexpected Outage</option>
-					</select>
+				  <label>Template:</label><br />
+				  <%= select "template", "template_type", [["", 0]] + ActiveRecord::Base::Template.all.collect {|template| [template.title, template.id]}, {}, :class => "styled", :id => "template_select" %>
 				</p>
 
 		    <p>

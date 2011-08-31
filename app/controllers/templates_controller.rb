@@ -14,6 +14,7 @@ class TemplatesController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.json { render :json => @template }
     end
   end
 

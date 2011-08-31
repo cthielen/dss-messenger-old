@@ -1,0 +1,41 @@
+<div class="block" style="background-color: inherit; border-bottom: none; background: none;">
+	<div class="block">
+		<div class="block_head">
+			<div class="bheadl"></div>
+			<div class="bheadr"></div>
+
+			<h2>Templates</h2>
+		</div>		<!-- .block_head ends -->
+		<div class="block_content">
+		  <table cellpadding="0" cellspacing="0" width="100%" class="sortable">
+
+  			<thead>
+  				<tr>
+  					<th width="10"><input type="checkbox" class="check_all" /></th>
+  					<th>Title</th>
+  					<td>&nbsp;</td>
+  				</tr>
+  			</thead>
+
+  			<tbody>
+          <% @templates.each do |template| %>
+            <tr>
+    					<td><input type="checkbox" /></td>
+              <td><%= template.title %></td>
+              <td><%= link_to 'Show', template %> | <%= link_to 'Edit', edit_template_path(template) %> | <%= link_to 'Destroy', template, :confirm => 'Are you sure?', :method => :delete %></td>
+            </tr>
+          <% end %>
+  			</tbody>
+
+  		</table>
+
+      <br />
+
+      <%= link_to 'New Template', new_template_path %>
+		</div>		<!-- .block_content ends -->
+
+		<div class="bendl"></div>
+		<div class="bendr"></div>
+	</div>		<!-- .block ends -->
+	
+</div>

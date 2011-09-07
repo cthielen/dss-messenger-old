@@ -13,6 +13,7 @@
   				<tr>
   					<th width="10"><input type="checkbox" class="check_all" /></th>
   					<th>Title</th>
+  					<th>Subject</th>
   					<td>&nbsp;</td>
   				</tr>
   			</thead>
@@ -22,6 +23,7 @@
             <tr>
     					<td><input type="checkbox" /></td>
               <td><%= template.title %></td>
+              <td><%= template.subject %></td>
               <td><%= link_to 'Show', template %> | <%= link_to 'Edit', edit_template_path(template) %> | <%= link_to 'Destroy', template, :confirm => 'Are you sure?', :method => :delete %></td>
             </tr>
           <% end %>

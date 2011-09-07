@@ -10,4 +10,17 @@ class Message < ActiveRecord::Base
       self.recipients << Recipient.find_or_create_by_id(id)
     end
   end
+  
+  def recipient_emails
+    # Query RM to faltten the recipient IDs
+    json_records = RmCustom.get("/resolve.json?ids=" + recipient_ids.join(',') + "&email")
+    
+    # Convert the JSON response into a regular Ruby array
+    emails = []
+    json_records.flatten.each do |record|
+      emails << record["email"]
+    end
+    
+    emails
+  end
 end

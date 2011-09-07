@@ -1,9 +1,9 @@
 class MessageMailer < ActionMailer::Base
-  default :from => "from@example.com"
+  default :from => "ithelp@dss.ucdavis.edu"
   
   def regular_message(message)
-    recipients "cmthielen@ucdavis.edu"
-    from "nobody@example.com"
+    recipients message.recipient_emails
+    from message.sender.email
     subject message.subject
     body :message => message
   end

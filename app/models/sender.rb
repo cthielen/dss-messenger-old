@@ -9,4 +9,13 @@ class Sender < ActiveRecord::Base
       p.first + ' ' + p.last
     end
   end
+  
+  def email
+    # Type to query depends on ID leading digit (see README/Technical Notes in DSS-RM)
+    case id.to_s.first.to_i
+    when 1
+      p = Person.find(id)
+      p.email
+    end
+  end
 end

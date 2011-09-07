@@ -20,6 +20,4 @@ class Person < ActiveResource::Base
     
     syms
   end
-  
-  #schema = { 'id' => :integer }
 end

@@ -73,7 +73,6 @@
 				<tr>
 					<th width="10"><input type="checkbox" class="check_all" /></th>
 					<th>Subject</th>
-					<th>Status</th>
 					<th>Date sent</th>
 					<th>From</th>
 					<td>&nbsp;</td>
@@ -81,79 +80,16 @@
 			</thead>
 			
 			<tbody>
+			  <% @messages.each do |message| %>
 				<tr>
 					<td><input type="checkbox" /></td>
-					<td><a href="#">Aorem ipsum dolor</a></td>
-					<td>Published</td>
-					<td>20.03.2010</td>
-					<td><a href="#">John Doe</a></td>
-					<td class="delete"><a href="#">Delete</a></td>
+					<td><%= link_to message.subject, message %></td>
+					<td><%= message.created_at.strftime("%b %d, %Y %I:%M%p") %></td>
+					<td><%= message.sender.name %></td>
+					<td class="delete"><a href="#">Revoke</a></td>
 				</tr>
-				
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><a href="#">Zn ac libero nunc, vel congue neque</a></td>
-					<td>Published</td>
-					<td>18.03.2010</td>
-					<td><a href="#">John Doe</a></td>
-					<td class="delete"><a href="#">Delete</a></td>
-				</tr>
-				
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><a href="#">Borem ipsum dolor</a></td>
-					<td>Published</td>
-					<td>20.03.2010</td>
-					<td><a href="#">John Doe</a></td>
-					<td class="delete"><a href="#">Delete</a></td>
-				</tr>
-				
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><a href="#">Aaa In ac libero nunc, vel congue neque</a></td>
-					<td>Published</td>
-					<td>18.03.2010</td>
-					<td><a href="#">John Doe</a></td>
-					<td class="delete"><a href="#">Delete</a></td>
-				</tr>
-				
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><a href="#">Lorem ipsum dolor</a></td>
-					<td>Published</td>
-					<td>20.03.2010</td>
-					<td><a href="#">John Doe</a></td>
-					<td class="delete"><a href="#">Delete</a></td>
-				</tr>
-				
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><a href="#">In ac libero nunc, vel congue neque</a></td>
-					<td>Published</td>
-					<td>18.03.2010</td>
-					<td><a href="#">John Doe</a></td>
-					<td class="delete"><a href="#">Delete</a></td>
-				</tr>
-				
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><a href="#">Lorem ipsum dolor</a></td>
-					<td>Published</td>
-					<td>20.03.2010</td>
-					<td><a href="#">John Doe</a></td>
-					<td class="delete"><a href="#">Delete</a></td>
-				</tr>
-				
-				<tr>
-					<td><input type="checkbox" /></td>
-					<td><a href="#">In ac libero nunc, vel congue neque</a></td>
-					<td>Published</td>
-					<td>08.03.2010</td>
-					<td><a href="#">John Doe</a></td>
-					<td class="delete"><a href="#">Delete</a></td>
-				</tr>
+				<% end %>
 			</tbody>
-			
 		</table>
 		
 	</div>		<!-- .block_content ends -->

@@ -17,7 +17,11 @@ class MessagesController < ApplicationController
     @message = Message.find_by_id(params[:id])
 
     # Ensure date format matches what JS produces (for visual consistency)
-    @message.expires = @message.expires.to_date.to_s.strip
+    unless @message.expires.nil?
+      @message.expires = @message.expires.to_date.to_s.strip
+    else
+      @message.expires = "None"
+    end
     
     @recipients = RmCustom.get("/resolve.json?ids=" + @message.recipient_ids.join(','))
     
@@ -26,4 +30,8 @@ class MessagesController < ApplicationController
     end
   end
   
+  # POST /messages/1
+  def update
+    
+  end
 end

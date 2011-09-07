@@ -34,8 +34,15 @@ DssMessenger::Application.configure do
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
 
-  # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  # Don't care if the mailer can't send
+  config.action_mailer.raise_delivery_errors = true
+  
+  config.action_mailer.smtp_settings = {
+    :address        => 'smtp.ucdavis.edu',
+    :port           => 25,
+    :domain         => 'dss.ucdavis.edu',
+    :authentication => :anonymous
+  }
 
   # Enable threaded mode
   # config.threadsafe!

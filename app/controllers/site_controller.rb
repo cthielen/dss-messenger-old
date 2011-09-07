@@ -3,6 +3,8 @@ class SiteController < ApplicationController
     @message = Message.new
     
     @message.sender = Sender.find_or_create_by_id(current_user.id)
+    
+    @messages = Message.find(:all, :order => "created_at DESC")
   end
   
   def search

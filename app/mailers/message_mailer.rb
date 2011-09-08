@@ -3,7 +3,7 @@ class MessageMailer < ActionMailer::Base
   
   def regular_message(message)
     bcc message.recipient_emails
-    to "Undisclosed Recipients <nobody@ucdavis.edu>"
+    recipients "Undisclosed Recipients <nobody@ucdavis.edu>"
     from message.sender.email
     subject message.subject
     body :message => message

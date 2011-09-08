@@ -8,4 +8,6 @@ DssMessenger::Application.routes.draw do
   root :to => "site#index"
   
   resources :messages
+  
+  mount Resque::Server, :at => "/resque"
 end

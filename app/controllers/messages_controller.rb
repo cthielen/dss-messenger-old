@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        Resque.enqueue(MessageSender, @message.id)
         format.html { redirect_to(@message, :notice => 'Message was queued successfully.') }
       else
         format.html { render :action => "new" }

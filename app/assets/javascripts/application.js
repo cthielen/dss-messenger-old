@@ -1,3 +1,8 @@
+//= require jquery
+//= require jquery_ujs
+//= require_self
+//= require_tree ./common
+
 base_uri = "";
 rm_uri = "http://dss-rm.dev";
 

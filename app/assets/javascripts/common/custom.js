@@ -31,7 +31,7 @@ $(function () {
 	
 	
 	// Set WYSIWYG editor
-	$('.wysiwyg').wysiwyg({css: base_uri + "/stylesheets/wysiwyg.css"});
+	$('.wysiwyg').wysiwyg({css: base_uri + "/assets/wysiwyg/wysiwyg.css"});
 	
 	
 	

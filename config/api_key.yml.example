@@ -1,2 +1,8 @@
 keys:
+  name: "App Name"
+  uri: "RM URI"
   key: "secret"
+
+resque:
+  name: "somebody"
+  password: "secret"

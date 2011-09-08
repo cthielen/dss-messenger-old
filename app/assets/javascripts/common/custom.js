@@ -104,7 +104,7 @@ $(function () {
 	
 	// Style file input
 	$("input[type=file]").filestyle({ 
-	    image: "images/upload.gif",
+	    image: "upload.gif",
 	    imageheight : 30,
 	    imagewidth : 80,
 	    width : 250
@@ -113,8 +113,10 @@ $(function () {
 	
 	
 	// Date picker
-	$('input.date_picker').date_input();
-	
+	var default_date = new Date($("input.date_picker").val())
+	$('input.date_picker').datepicker();
+	$('input.date_picker').datepicker( "option", "dateFormat", "d M yy" );
+	$('input.date_picker').datepicker( "setDate", default_date );
 
 
 	// Navigation dropdown fix for IE6

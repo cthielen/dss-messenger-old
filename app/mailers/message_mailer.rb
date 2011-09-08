@@ -2,7 +2,8 @@ class MessageMailer < ActionMailer::Base
   default :from => "ithelp@dss.ucdavis.edu"
   
   def regular_message(message)
-    recipients message.recipient_emails
+    bcc message.recipient_emails
+    to "Undisclosed Recipients <nobody@ucdavis.edu>"
     from message.sender.email
     subject message.subject
     body :message => message

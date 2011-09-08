@@ -38,3 +38,5 @@ gem 'rubycas-client'
 
 # For JSON parsing of dss-rm/api/search.json
 gem 'httparty'
+
+gem 'mysql'

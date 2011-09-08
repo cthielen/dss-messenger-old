@@ -19,6 +19,8 @@
     <%= @message.body.html_safe %>
   </div>
   
-  <small>This message was sent to you by DSS Messenger on behalf of <%= @message.sender.name %>.</small>
+  <div style="padding: 1em; padding-top: 0;">
+    <small>This message was sent to you by DSS Messenger on behalf of <%= @message.sender.name %>.</small>
+  </div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 module ApplicationHelper
   def current_controller?(options)
-      options[:controller] == @controller.controller_name
+      options[:controller] == controller_name
   end
   
   # Returns the full object (RESTful API call)

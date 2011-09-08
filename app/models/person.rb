@@ -2,6 +2,7 @@ class Person < ActiveResource::Base
   self.site = YAML.load_file("#{Rails.root.to_s}/config/api_key.yml")['keys']['uri']
   self.user = YAML.load_file("#{Rails.root.to_s}/config/api_key.yml")['keys']['name']
   self.password = YAML.load_file("#{Rails.root.to_s}/config/api_key.yml")['keys']['key']
+  self.format = :xml 
   
   # ACL symbols
   def role_symbols

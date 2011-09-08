@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
+gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -34,7 +34,7 @@ gem "jquery-rails"
 
 gem 'declarative_authorization', :git => 'git://github.com/stffn/declarative_authorization.git'
 
-gem 'rubycas-client'
+gem 'rubycas-client', :git => 'https://github.com/rubycas/rubycas-client.git'
 
 # For JSON parsing of dss-rm/api/search.json
 gem 'httparty'

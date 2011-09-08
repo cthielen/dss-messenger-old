@@ -1,23 +1,23 @@
 rails_env   = ENV['RAILS_ENV']  || "production"
 rails_root  = ENV['RAILS_ROOT'] || "/data/github/current"
-num_workers = rails_env == 'production' ? 5 : 2
+num_workers = 1 #rails_env == 'production' ? 5 : 2
 
 num_workers.times do |num|
   God.watch do |w|
     w.dir      = "#{rails_root}"
-    w.name     = "resque-#{num}"
+    w.name     = "messages_queue"
     w.group    = 'resque'
     w.interval = 30.seconds
-    w.env      = {"QUEUE"=>"critical,high,low", "RAILS_ENV"=>rails_env}
+    w.env      = {"QUEUE"=>"*", "RAILS_ENV"=>rails_env}
     w.start    = "rake -f #{rails_root}/Rakefile environment resque:work"
 
-    w.uid = 'git'
-    w.gid = 'git'
+    #w.uid = 'git'
+    #w.gid = 'git'
 
     # restart if memory gets too high
     w.transition(:up, :restart) do |on|
       on.condition(:memory_usage) do |c|
-        c.above = 350.megabytes
+        c.above = 60.megabytes
         c.times = 2
       end
     end

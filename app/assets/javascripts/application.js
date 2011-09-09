@@ -19,8 +19,8 @@ $(function() {
     if(template_id) {
       $.get(base_uri + "/templates/" + template_id + ".json", function(obj, success) {
         if(success == "success") {
-          var body = obj.template.body;
-          var subject = obj.template.subject;
+          var body = obj.body;
+          var subject = obj.subject;
           
           $("input#message_subject").val(subject);
           $("textarea.wysiwyg").wysiwyg("setContent", body);

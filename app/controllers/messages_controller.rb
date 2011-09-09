@@ -5,7 +5,10 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        Resque.enqueue(MessageSender, @message.id)
+        if @message.message_type_id == 2 or @message.message_type_id == 3
+          # Email message
+          Resque.enqueue(MessageSender, @message.id)
+        end
         format.html { redirect_to(@message, :notice => 'Message was queued successfully.') }
       else
         format.html { render :action => "new" }

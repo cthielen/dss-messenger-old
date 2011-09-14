@@ -5,3 +5,4 @@ tmp/
 config/api_keys.yml
 public/.DS_Store
 .sass-cache/
+.rvmrc

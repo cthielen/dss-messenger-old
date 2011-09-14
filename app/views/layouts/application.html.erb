@@ -9,9 +9,6 @@
 	
 	<%= javascript_include_tag "application" %>
 	
-	<!--[if lt IE 8]><%= stylesheet_link_tag "ie/ie.css" %><![endif]-->
-	<!--[if IE]><%= javascript_include_tag "ie/excanvas.js" %><![endif]-->
-	
 	<%= javascript_include_tag "common/application_production_specific.js" if Rails.env == "production" %>
 	
 	<%= csrf_meta_tag %>

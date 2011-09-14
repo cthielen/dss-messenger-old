@@ -31,10 +31,6 @@ namespace :deploy do
       run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
     end
 
-    #desc "Sync the public/assets directory."
-    #task :assets do
-    #  system "rsync -vr --exclude='.DS_Store' public/assets #{user}@#{application}:#{shared_path}/"
-    #end
     desc "Pre-compile the assets."
     task :precompile_assets do #, :roles => :web, :except => { :no_release => true } do
       run "cd #{current_path}; rm -rf public/assets/*"

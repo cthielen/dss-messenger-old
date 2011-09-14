@@ -1,15 +1,15 @@
 class Person < ActiveResource::Base
-  self.site = YAML.load_file("#{Rails.root.to_s}/config/api_key.yml")['keys']['uri']
-  self.user = YAML.load_file("#{Rails.root.to_s}/config/api_key.yml")['keys']['name']
-  self.password = YAML.load_file("#{Rails.root.to_s}/config/api_key.yml")['keys']['key']
+  self.site = YAML.load_file("#{Rails.root.to_s}/config/api_keys.yml")['keys']['uri']
+  self.user = YAML.load_file("#{Rails.root.to_s}/config/api_keys.yml")['keys']['name']
+  self.password = YAML.load_file("#{Rails.root.to_s}/config/api_keys.yml")['keys']['key']
   self.format = :xml 
   
   # ACL symbols
   def role_symbols
     # Get this app's API key
-    api_key = YAML.load_file("#{Rails.root.to_s}/config/api_key.yml")['keys']['key']
+    api_key = YAML.load_file("#{Rails.root.to_s}/config/api_keys.yml")['keys']['key']
     # Though we know this, let's keep it configurable in case it changes
-    app_name = YAML.load_file("#{Rails.root.to_s}/config/api_key.yml")['keys']['name']
+    app_name = YAML.load_file("#{Rails.root.to_s}/config/api_keys.yml")['keys']['name']
     
     syms = []
     

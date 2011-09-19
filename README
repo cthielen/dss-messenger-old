@@ -33,7 +33,7 @@ You can also search the code for "INSTALLME" (case-sensitive) in case this READM
 is out of date.
 
 == Technical Notes
-None
+By default, the Flash API query only looks a week ahead.
 
 == Authors
 Christopher Thielen (cmthielen@ucdavis.edu)

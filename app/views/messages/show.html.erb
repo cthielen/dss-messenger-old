@@ -36,6 +36,11 @@
 				</p>
 				
 				<p>
+				  <%= f.label :message_type_id, "Flash on Sites" %><br />
+				  Enable <%= f.radio_button :flash, true, :class => "styled" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Disable <%= f.radio_button :flash, false, :class => "styled" %>
+				</p>
+				
+				<p>
 				  <%= f.label :message_type_id, "Message type" %><br />
 				  <%= f.select :message_type_id, MessageType.all.collect {|type| [type.name, type.id]}, {}, :class => "styled", :disabled => "disabled" %>
 				</p>

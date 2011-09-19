@@ -8,6 +8,10 @@ DssMessenger::Application.routes.draw do
   root :to => "site#index"
   
   resources :messages
+
+  namespace "api" do
+    get "flashes", :controller => "custom"
+  end
   
   mount Resque::Server, :at => "/resque"
 end

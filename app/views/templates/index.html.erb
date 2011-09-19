@@ -11,7 +11,6 @@
 
   			<thead>
   				<tr>
-  					<th width="10"><input type="checkbox" class="check_all" /></th>
   					<th>Title</th>
   					<th>Subject</th>
   					<td>&nbsp;</td>
@@ -21,10 +20,9 @@
   			<tbody>
           <% @templates.each do |template| %>
             <tr>
-    					<td><input type="checkbox" /></td>
-              <td><%= template.title %></td>
+              <td><%= link_to template.title, template %></td>
               <td><%= template.subject %></td>
-              <td><%= link_to 'Show', template %> | <%= link_to 'Edit', edit_template_path(template) %> | <%= link_to 'Destroy', template, :confirm => 'Are you sure?', :method => :delete %></td>
+              <td><%= link_to 'Edit', edit_template_path(template) %> | <%= link_to 'Destroy', template, :confirm => 'Are you sure?', :method => :delete %></td>
             </tr>
           <% end %>
   			</tbody>

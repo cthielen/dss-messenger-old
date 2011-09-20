@@ -1,4 +1,4 @@
-class Api::CustomController < ActionController::Base
+class Api::CustomController < Api::BaseController
   def flashes
     @messages = Message.find(:all, :conditions => {:flash => true, :expires => Date.today..(Date.today+7) })
 

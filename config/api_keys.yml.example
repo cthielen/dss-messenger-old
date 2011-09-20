@@ -1,4 +1,4 @@
-keys:
+roles:
   name: "App Name"
   uri: "RM URI"
   key: "secret"

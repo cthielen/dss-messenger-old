@@ -40,10 +40,6 @@ class ApplicationController < ActionController::Base
     return false
   end
   
-  def permission_denied
-    redirect_to :controller => "site", :action => "access_denied"
-  end
-
   protected
   
   def requested_api?
@@ -54,5 +50,4 @@ class ApplicationController < ActionController::Base
     flash[:error] = "Sorry, you are not allowed to access that page."
     redirect_to root_url
   end
-
 end

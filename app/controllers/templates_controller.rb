@@ -69,4 +69,8 @@ class TemplatesController < ApplicationController
       format.html { redirect_to(templates_url) }
     end
   end
+  
+  def permission_denied
+    redirect_to :controller => "site", :action => "access_denied"
+  end
 end

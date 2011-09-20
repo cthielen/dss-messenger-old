@@ -40,4 +40,8 @@ class MessagesController < ApplicationController
   def update
     
   end
+
+  def permission_denied
+    redirect_to :controller => "site", :action => "access_denied"
+  end
 end

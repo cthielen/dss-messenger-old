@@ -28,4 +28,8 @@ class SiteController < ApplicationController
   
   def access_denied
   end
+
+  def permission_denied
+    redirect_to :controller => "site", :action => "access_denied"
+  end
 end

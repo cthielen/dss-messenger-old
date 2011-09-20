@@ -1,4 +1,6 @@
 class TemplatesController < ApplicationController
+  filter_resource_access
+  
   # GET /templates
   def index
     @templates = Template.all

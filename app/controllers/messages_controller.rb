@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  filter_resource_access
+  
   # POST /messages
   def create
     @message = Message.new(params[:message])

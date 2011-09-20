@@ -1,4 +1,6 @@
 class SiteController < ApplicationController
+  filter_access_to :index, :search
+  
   def index
     @message = Message.new
     
@@ -22,5 +24,8 @@ class SiteController < ApplicationController
 
   def logout
     CASClient::Frameworks::Rails::Filter.logout(self)
+  end
+  
+  def access_denied
   end
 end

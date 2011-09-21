@@ -1,4 +1,6 @@
 DssMessenger::Application.routes.draw do
+  resources :applications
+
   resources :templates
 
   get "index", :controller => "Site"

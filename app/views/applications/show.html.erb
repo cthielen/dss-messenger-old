@@ -1,0 +1,34 @@
+<div class="block" style="background-color: inherit; border-bottom: none; background: none;">
+	<div class="block">
+		<div class="block_head">
+			<div class="bheadl"></div>
+			<div class="bheadr"></div>
+
+			<h2><%= @application.name %></h2>
+			
+			<ul class="tabs">
+  			<li><a href="#">Overview</a></li>
+  			<li><%= link_to 'Edit', edit_application_path(@application) %></li>
+  		</ul>
+		</div>		<!-- .block_head ends -->
+		<div class="block_content">
+      <p>
+        <b>Name:</b>
+        <%= @application.name %>
+      </p>
+
+      <p>
+        <b>API Key:</b>
+        <%= @application.api_key %>
+      </p>
+
+      <p>
+        <b>Hostname:</b>
+        <%= @application.hostname %>
+      </p>
+		</div>		<!-- .block_content ends -->
+
+		<div class="bendl"></div>
+		<div class="bendr"></div>
+	</div>		<!-- .block ends -->	
+</div>

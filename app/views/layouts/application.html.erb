@@ -40,10 +40,24 @@
 							<li><%= link_to 'Create New Template', new_template_path %></li>
 						</ul>
 					</li>
+					<% if current_controller?( :controller => "applications" ) %>
+						<li class="active"><%= link_to "Applications", applications_path %>
+					<% elsif %>
+						<li><%= link_to "Applications", applications_path %>
+					<% end %>
+						<ul>
+							<li><%= link_to "View All", applications_path %></li>
+							<li><%= link_to 'Register New Application', new_application_path %></li>
+						</ul>
+					</li>
 				</ul>
 				
 				<p class="user">Hello, <%= current_user.first %> (<%= link_to "Logout", :controller => "Site", :action => "logout" %>)</p>
 			</div> <!-- #header -->
+			
+			<% if notice %>
+      <div class="message success"><p><%= notice %></p></div>
+      <% end %>
 			
 			<%= yield %>
 			

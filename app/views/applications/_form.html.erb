@@ -1,0 +1,35 @@
+<%= form_for(@application) do |f| %>
+  <% if @application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@application.errors.count, "error") %> prohibited this application from being saved:</h2>
+
+      <ul>
+      <% @application.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :class => "text" %>
+  </p>
+  <p>
+    <%= f.label :api_key, "API Key" %><br />
+    <%= f.text_field :api_key, :class => "text", :disabled => true %>
+  </p>
+  <p>
+    <%= f.label :hostname %><br />
+    <%= f.text_field :hostname, :class => "text" %>
+  </p>
+  <div class="actions">
+  	<p style="clear: none;">
+      <%= f.submit "Submit", :class => "submit mid", :name => "submit" %>
+  	  <% if action_name != "new" %>
+  	    <%= f.submit "Reset API Key", :class => "submit mid", :confirm => "Are you sure you want to reset the API key?", :name => "reset" %>
+  	    <%= f.submit "Remove", :class => "submit mid alert", :name => "delete", :confirm => "Are you sure you want to remove the application?" %>
+  	  <% end %>
+  	</p>
+  </div>
+<% end %>

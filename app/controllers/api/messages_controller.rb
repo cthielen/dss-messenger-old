@@ -4,7 +4,14 @@ class Api::MessagesController < Api::BaseController
     @user_id = Person.find(params[:id])
 
     # Magic numbers here: 1 and 2 are the message types involving "portal inbox" type messages
+    # Look up messages sent directly to them
     @messages = Message.includes(:recipients).where(:message_type_id => [1, 2], :recipients => {:id => @user_id.id})
+
+    # Look up messages sent to their OUs
+    
+    
+    # Look up messages sent to their groups
+    
 
     respond_to do |format|
       format.xml

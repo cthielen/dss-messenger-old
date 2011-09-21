@@ -35,6 +35,12 @@ is out of date.
 == Technical Notes
 By default, the Flash API query only looks a week ahead.
 
+== Security Notes
+As of the current version, there is only the "admin" role, which can read all messages,
+including those meant for other people. The api/ module acts the same way. If this is
+to be altered in the future, one must not forget to alter the api/ module's disparate
+behavior as well as the HTML view's behavior.
+
 == Authors
 Christopher Thielen (cmthielen@ucdavis.edu)
 

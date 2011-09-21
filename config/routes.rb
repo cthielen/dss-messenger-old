@@ -15,6 +15,8 @@ DssMessenger::Application.routes.draw do
 
   namespace "api" do
     get "flashes", :controller => "custom"
+    
+    resources :messages
   end
   
   mount Resque::Server, :at => "/resque"

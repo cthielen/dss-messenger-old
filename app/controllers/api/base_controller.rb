@@ -6,7 +6,7 @@ class Api::BaseController < ApplicationController
   def api_authenticate
     if session[:cas_user].nil?
       authenticate_or_request_with_http_basic do |username, password|
-        @application = RmApplication.find_by_name(username)
+        @application = Application.find_by_name(username)
 
         if @application.nil? == false
           # Application exists

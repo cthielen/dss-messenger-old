@@ -1,7 +1,8 @@
 class ApplicationsController < ApplicationController
   require 'digest/md5'
   
-  filter_resource_access
+  before_filter :load_application
+  filter_access_to :all, :attribute_check => true
   
   # GET /applications
   def index
@@ -12,10 +13,8 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  # GET /applications/1
+  # GET /applications/app_name
   def show
-    @application = Application.find(params[:id])
-
     respond_to do |format|
       format.html
     end
@@ -30,9 +29,8 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  # GET /applications/1/edit
+  # GET /applications/app_name/edit
   def edit
-    @application = Application.find(params[:id])
   end
 
   # POST /applications
@@ -50,10 +48,8 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  # PUT /applications/1
+  # PUT /applications/app_name
   def update
-    @application = Application.find(params[:id])
-
     if params[:delete]
       @application.destroy
       respond_to do |format|
@@ -76,9 +72,8 @@ class ApplicationsController < ApplicationController
     end
   end
 
-  # DELETE /applications/1
+  # DELETE /applications/app_name
   def destroy
-    @application = Application.find(params[:id])
     @application.destroy
 
     respond_to do |format|
@@ -90,5 +85,9 @@ class ApplicationsController < ApplicationController
   
   def generate_api_key(application)
     Digest::MD5.hexdigest(application.name + application.hostname + Time.now.to_i.to_s)
+  end
+  
+  def load_application
+    @application = Application.find_by_name(params[:id])
   end
 end

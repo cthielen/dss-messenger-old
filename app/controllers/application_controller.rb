@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter CASClient::Frameworks::Rails::Filter
+  before_filter CASClient::Frameworks::Rails::Filter, :unless => :requested_api?
   before_filter :login_required, :unless => :requested_api?
   before_filter :set_current_user, :unless => :requested_api?
   skip_before_filter :set_current_user, :only => [:access_denied]

@@ -1,8 +1,8 @@
 class ApplicationsController < ApplicationController
   require 'digest/md5'
   
-  before_filter :load_application
-  filter_access_to :all, :attribute_check => true
+  before_filter :load_application, :except => [:index]
+  filter_access_to :all, :attribute_check => false
   
   # GET /applications
   def index

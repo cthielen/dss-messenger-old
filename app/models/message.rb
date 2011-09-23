@@ -6,14 +6,24 @@ class Message < ActiveRecord::Base
   accepts_nested_attributes_for :sender, :recipients
 
   def to_tokens=(to_tokens)
-    to_tokens.split(",").each do |id|
-      self.recipients << Recipient.find_or_create_by_id(id)
+    to_tokens.split(",").each do |uid|
+      r = Recipient.new
+      r.uid = uid
+      self.recipients << r
     end
   end
   
   def recipient_emails
+    recipient_uids = []
+    
+    # Resolve the recipient IDs
+    rids = Recipient.where(:message_id => id)
+    rids.each do |r|
+      recipient_uids << r.uid
+    end
+    
     # Query RM to faltten the recipient IDs
-    json_records = RmCustom.get("/resolve.json?ids=" + recipient_ids.join(',') + "&email")
+    json_records = RmCustom.get("/resolve.json?ids=" + recipient_uids.join(',') + "&email")
     
     # Convert the JSON response into a regular Ruby array
     emails = []
@@ -22,5 +32,26 @@ class Message < ActiveRecord::Base
     end
     
     emails
+  end
+  
+  def recipients_json
+    recipient_uids = []
+    
+    # Resolve the recipient IDs
+    rids = Recipient.where(:message_id => id)
+    rids.each do |r|
+      recipient_uids << r.uid
+    end
+    
+    # Query RM to faltten the recipient IDs
+    json_records = RmCustom.get("/resolve.json?ids=" + recipient_uids.join(','))
+    
+    # Convert the JSON response into a regular Ruby array
+    names = []
+    json_records.flatten.each do |record|
+      names << {:name => record["name"], :id => record["id"]}
+    end
+    
+    names.to_json
   end
 end

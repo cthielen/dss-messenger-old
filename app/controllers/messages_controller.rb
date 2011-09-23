@@ -29,8 +29,6 @@ class MessagesController < ApplicationController
       @message.expires = "None"
     end
     
-    @recipients = RmCustom.get("/resolve.json?ids=" + @message.recipient_ids.join(','))
-    
     respond_to do |format|
       format.html
     end

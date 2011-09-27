@@ -2,8 +2,14 @@ class Message < ActiveRecord::Base
   has_many :recipients
   belongs_to :sender
   belongs_to :message_type
+  after_initialize :init
 
   accepts_nested_attributes_for :sender, :recipients
+
+  def init
+    self.flash  ||= false         # set the default value only if nil
+    self.expires ||= Date.today >> 1 # next month
+  end
 
   def to_tokens=(to_tokens)
     to_tokens.split(",").each do |uid|

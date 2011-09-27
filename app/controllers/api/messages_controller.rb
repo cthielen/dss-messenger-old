@@ -21,6 +21,9 @@ class Api::MessagesController < Api::BaseController
       m = Message.includes(:recipients).where(:message_type_id => [1, 2], :recipients => {:uid => ou.id})
       @messages = @messages + m.flatten
     end
+    
+    # Sort in expires date descending order
+    @messages.sort! { |a,b| b.expires <=> a.expires }
 
     respond_to do |format|
       format.xml
